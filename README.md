@@ -1,7 +1,7 @@
 ![BrightCoders Logo](img/logo-bc.png)
 
 # Nombre del proyecto
-Definan un nombre para su proyecto
+Local Sales
 
 ## Problematica que atiende
 Describan la problemática que pretenden atender con su proyecto
