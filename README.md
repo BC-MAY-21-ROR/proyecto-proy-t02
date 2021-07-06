@@ -8,7 +8,7 @@ A raíz de la pandemia por Covid-19 muchos de los negocios locales y emprendedor
 Con la nueva normalidad los comerciantes buscan una nueva forma de vender sus productos y reducir los aforos de personas en sus locales.
 
 ## Propuesta de solución
-Describan de manera general las características de tu propuesta así como la forma en que atiende o resuelve la problemática que definieron.
+Se propone la creación de una aplicación web para que los comercios locales puedan ofrecer sus productos a la población y a su vez puedan llevar un inventario de los productos que poseen
 
 ## Definición de requerimientos del MVP
 
