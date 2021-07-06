@@ -4,7 +4,8 @@
 Local Sales
 
 ## Problematica que atiende
-Describan la problemática que pretenden atender con su proyecto
+A raíz de la pandemia por Covid-19 muchos de los negocios locales y emprendedores se vieron afectados en las ventas, generando una baja en sus ingresos. 
+Con la nueva normalidad los comerciantes buscan una nueva forma de vender sus productos y reducir los aforos de personas en sus locales.
 
 ## Propuesta de solución
 Describan de manera general las características de tu propuesta así como la forma en que atiende o resuelve la problemática que definieron.
