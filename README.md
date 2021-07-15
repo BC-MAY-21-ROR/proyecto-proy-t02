@@ -14,39 +14,39 @@ Se propone la creación de una aplicación web para que los comercios locales pu
 
 ### Requerimientos funcionales
 - Super Administrador
-    Registrar Administradores de los negocios
+  - Registrar Administradores de los negocios
     
 - Administrador
-    Administración del perfil del negocio (contacto)
-    Categoría del negocio
-    Sistema de  CRUD de inventariado
-    Sistema CRUD de ofertas
-    Ubicacion en el mapa
+  - Administración del perfil del negocio (contacto)
+  - Categoría del negocio
+  - Sistema de  CRUD de inventariado
+  - Sistema CRUD de ofertas
+  - Ubicacion en el mapa
 
 - Clientes
-    Buscador por zona
-    Vista del mapa
-    Vista de negocios locales
-    Vista de productos de los negocios
-    Vista de contacto
+  - Buscador por zona
+  - Vista del mapa
+  - Vista de negocios locales
+  - Vista de productos de los negocios
+  - Vista de contacto
 
 ### Requerimientos no funcionales
 - Lenguaje
-    Ruby
+  - Ruby
 
 - Base de Datos
-    PostgreSQL
+  - PostgreSQL
 
 - Framework CSS
-    Tailwind
+  - Tailwind
 
 - Calidad
-    Utilizar estilo de código definido por la comunidad (apoyarse en Rubocop)
-    Pruebas unitarias
-    Uso de Rubycritic
+  - Utilizar estilo de código definido por la comunidad (apoyarse en Rubocop)
+  - Pruebas unitarias
+  - Uso de Rubycritic
     
 - Deployment
-    Configuración de un servidor web (heroku o similar) para el deployment automático de actualizaciones de la app
+  - Configuración de un servidor web (heroku o similar) para el deployment automático de actualizaciones  de la app
 
 ## Diseño del MVP
 
