@@ -52,6 +52,10 @@ Se propone la creación de una aplicación web para que los comercios locales pu
 
 Incluyan en [esta carpeta](/design) su propuesta de diseño
 
+## Heroku
+
+[App desplegada en Heroku](https://localsales.herokuapp.com/)
+
 ## Recursos
 
 - [Minimum Viable Product](https://www.agilealliance.org/glossary/mvp/#q=~(infinite~false~filters~(tags~(~'mvp))~searchTerm~'~sort~false~sortDirection~'asc~page~1))
