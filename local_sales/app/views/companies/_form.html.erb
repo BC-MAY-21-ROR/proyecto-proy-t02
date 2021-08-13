@@ -1,0 +1,19 @@
+<%= form_with(model: company, local: true) do |form| %>
+
+  <div>
+    <label for="fname">Nombre del negocio: </label><br>
+    <%= form.text_field :name %><br>
+
+    <label for="lname">Direccion: </label><br>
+    <%= form.text_field :adress %>    
+  </div>
+
+  <div class="actions">
+    <% if action_name=="edit"  %>
+      <%= form.submit "Actualizar Negocio", :class => 'rounded ... '%>
+    <% else %>
+      <%= form.submit "Crear Negocio", :class => 'rounded ...'%>
+    <% end %>
+  </div>
+
+<% end %>
