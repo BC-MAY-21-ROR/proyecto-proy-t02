@@ -32,6 +32,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
+  gem 'rubocop', '~> 1.12'
+  gem 'rubocop-rails', '~> 2.9', require: false
+  gem 'rubycritic', '~> 4.6'
+  gem 'rubycritic-small-badge', '~> 0.2.1'
+  gem 'sandi_meter', '~> 1.2'
 end
 
 group :development do
@@ -52,6 +57,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rexml'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webdrivers'
