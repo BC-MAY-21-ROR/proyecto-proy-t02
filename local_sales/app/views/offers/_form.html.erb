@@ -1,0 +1,32 @@
+<%= form_with(model: offer) do |form| %>
+  <% if offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+        <% offer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field py-2">
+    <%= form.label :nombre %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field py-2">
+    <%= form.label :estatus %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field py-2">
+    <%= form.label :descuento %>
+    <%= form.text_field :discount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
