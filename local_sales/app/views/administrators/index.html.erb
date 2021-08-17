@@ -1,0 +1,25 @@
+<div class="container max-w-md mx-auto">
+  <%= link_to 'New', new_administrator_path %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @administrators.each do |administrator| %>
+        <tr>
+          <td><%= administrator.name %></td>
+          <td><%= administrator.email %></td>
+          <td>
+            <%= link_to 'Show', administrator_path(administrator) %>
+            <%= link_to 'Edit', edit_administrator_path(administrator) %>
+            <%= link_to 'Destroy', administrator_path(administrator), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
