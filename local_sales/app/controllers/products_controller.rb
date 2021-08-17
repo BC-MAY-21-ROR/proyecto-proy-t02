@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
 	  @product = Product.new
-	end
+  end
 
 	# GET /products/1/edit
   def edit
@@ -22,14 +22,22 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = Product.new(product_params)
-	  @product.save
-    redirect_to @product, notice: 'Product was successfully created.'
+    if @product.save
+      flash[:success] = 'product was successfully created'
+      redirect_to products_path
+    else
+      flash[:error] = 'product was not created'
+    end
   end
 
 	# PATCH/PUT /products/1
   def update
-    @product.update(product_params)
-  	redirect_to @product, notice: 'Product was successfully updated.'
+    if @product.update(product_params)
+      flash[:success] = 'product was successfully updated'
+      redirect_to products_path
+    else
+      flash[:error] = 'product was not updated'
+    end
   end
 
 	# DELETE /products/1
