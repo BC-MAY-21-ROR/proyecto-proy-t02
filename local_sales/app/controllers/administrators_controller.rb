@@ -10,7 +10,7 @@ class AdministratorsController < ApplicationController
   end
 
   def create
-    @administrator = User.new(administator_params)
+    @administrator = User.new(administrator_params)
     if @administrator.save
       redirect_to administrators_path
     else
@@ -23,7 +23,7 @@ class AdministratorsController < ApplicationController
   def edit; end
 
   def update
-    if @administrator.update(administator_params)
+    if @administrator.update(administrator_params)
       redirect_to administrators_path
     else
       render :edit
@@ -37,7 +37,7 @@ class AdministratorsController < ApplicationController
 
   private
 
-  def administator_params
+  def administrator_params
     params.require(:user).permit(:name, :email, :password)
   end
 
