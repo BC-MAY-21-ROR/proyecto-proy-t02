@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_08_11_163905) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 2021_08_11_163905) do
     t.string "adress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_companies_on_category_id"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
@@ -36,6 +40,11 @@ ActiveRecord::Schema.define(version: 2021_08_11_163905) do
     t.float "discount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "offers_products", id: false, force: :cascade do |t|
+    t.bigint "offer_id", null: false
+    t.bigint "product_id", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -53,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_08_11_163905) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id", null: false
+    t.index ["company_id"], name: "index_providers_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,6 +78,9 @@ ActiveRecord::Schema.define(version: 2021_08_11_163905) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "categories"
+  add_foreign_key "products", "companies"
+  add_foreign_key "providers", "companies"
   add_foreign_key "companies", "users"
   add_foreign_key "products", "companies"
 end
