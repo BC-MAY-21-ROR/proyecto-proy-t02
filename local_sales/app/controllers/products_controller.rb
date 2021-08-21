@@ -6,10 +6,6 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  # GET /products/1
-  def show
-  end
-
   # GET /products/new
   def new
 	  @product = Product.new
@@ -22,6 +18,7 @@ class ProductsController < ApplicationController
   # POST /products
   def create
     @product = Product.new(product_params)
+    @product.company_id = 1 # TODO Assign company_id according to previous company selection
     if @product.save
       flash[:success] = 'product was successfully created'
       redirect_to products_path
@@ -40,12 +37,6 @@ class ProductsController < ApplicationController
     end
   end
 
-	# DELETE /products/1
-  def destroy
-	  @product.destroy
-	  redirect_to products_path, notice: 'Offer was successfully destroyed.'
-  end
-
   private
 
 		# Use callbacks to share common setup or constraints between actions.
@@ -55,6 +46,6 @@ class ProductsController < ApplicationController
 
 	  # Only allow a list of trusted parameters through.
 	  def product_params
-      params.require(:product).permit(:name, :price, :quantity, :description)
+      params.require(:product).permit(:name, :price, :quantity, :description, :company_id)
     end
 end
