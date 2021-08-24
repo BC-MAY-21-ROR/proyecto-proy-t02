@@ -1,8 +1,8 @@
 class Company < ApplicationRecord
- validates :name, :address, :category_id, presence: true
-
+ validates :name, :address, :category_id, :town_id, presence: true
 
   belongs_to :category
+  belongs_to :town
   has_many :providers
   has_many :products
 end
