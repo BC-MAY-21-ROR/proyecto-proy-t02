@@ -43,15 +43,6 @@ class OffersController < ApplicationController
     end
   end
 
-  # DELETE /offers/1 or /offers/1.json
-  # def destroy
-  #   @offer.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to offers_url, notice: "Offer was successfully destroyed." }
-  #     format.json { head :no_content }
-  #   end
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_offer
