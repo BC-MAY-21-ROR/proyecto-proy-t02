@@ -6,6 +6,9 @@
 
     <label for="lname">Direccion: </label><br>
     <%= form.text_field :address %>    
+
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name%>
+
   </div>
 
   <div class="actions">
