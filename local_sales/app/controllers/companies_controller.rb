@@ -5,9 +5,6 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
-  def show
-  end
-
   def new
     @company = Company.new
   end
@@ -20,7 +17,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: "Company was successfully created." }
+        format.html { redirect_to companies_path, notice: "Company was successfully created." }
         format.json { render @company, status: :created }
       else
         format.html { render :new, status: :unprocessable_entity }
