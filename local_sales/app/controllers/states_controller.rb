@@ -1,5 +1,5 @@
 class StatesController < ApplicationController
-  before_action :set_state, only: %i[ show edit update ]
+  before_action :set_state, only: %i[edit update]
 
   # GET /states
   def index
@@ -8,12 +8,11 @@ class StatesController < ApplicationController
 
   # GET /states/new
   def new
-	  @state = State.new
+    @state = State.new
   end
 
-	# GET /states/1/edit
-  def edit
-  end
+  # GET /states/1/edit
+  def edit; end
 
   # POST /states
   def create
@@ -27,7 +26,7 @@ class StatesController < ApplicationController
     end
   end
 
-	# PATCH/PUT /states/1
+  # PATCH/PUT /states/1
   def update
     if @state.update(state_params)
       flash[:success] = 'state was successfully updated'
@@ -40,13 +39,13 @@ class StatesController < ApplicationController
 
   private
 
-		# Use callbacks to share common setup or constraints between actions.
-	  def set_state
-	    @state = State.find(params[:id])
-	  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_state
+    @state = State.find(params[:id])
+  end
 
-	  # Only allow a list of trusted parameters through.
-	  def state_params
-      params.require(:state).permit(:name)
-    end
+  # Only allow a list of trusted parameters through.
+  def state_params
+    params.require(:state).permit(:name)
+  end
 end
