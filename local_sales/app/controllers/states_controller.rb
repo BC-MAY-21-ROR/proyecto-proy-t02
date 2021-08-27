@@ -23,6 +23,7 @@ class StatesController < ApplicationController
       redirect_to states_path
     else
       flash[:error] = 'state was not created'
+      render :new
     end
   end
 
@@ -33,6 +34,7 @@ class StatesController < ApplicationController
       redirect_to states_path
     else
       flash[:error] = 'state was not updated'
+      render :edit
     end
   end
 
