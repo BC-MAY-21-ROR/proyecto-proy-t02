@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field py-2">
-    <%= form.label :nombre %>
-    <%= form.text_field :name %>
+  <div class="mb-4 mt-6">
+    <%= form.label :nombre, :class => 'block text-blue-600 mb-2' %>
+    <%= form.text_field :name, :autocomplete => :off, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
   </div>
 
-  <div class="field py-2">
-    <%= form.label :estatus %>
-    <%= form.text_field :status %>
+  <div class="mb-4 mt-6">
+    <%= form.label :descuento, :class => 'block text-blue-600 mb-2	' %>
+    <%= form.text_field :discount, :autocomplete => :off, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
   </div>
 
-  <div class="field py-2">
-    <%= form.label :descuento %>
-    <%= form.text_field :discount %>
+  <div class="mb-4 mt-6">
+    <%= form.label :estatus, :class => 'block text-blue-600 mb-2' %>
+    <%= form.text_field :status, :autocomplete => :off, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center lg:mt-6 mt-10">
+    <%= form.submit 'Guardar', :class => 'text-white rounded cursor-pointer w-32 h-10 transition duration-150 ease-in-out bg-blue-900 transform hover:-translate-y-1 hover:scale-110' %>
   </div>
 <% end %>
