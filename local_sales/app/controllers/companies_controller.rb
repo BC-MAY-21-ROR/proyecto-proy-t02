@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
 
   def new
     @company = Company.new
+    @categories = Category.all
   end
 
   def edit
@@ -14,27 +15,22 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-
-    respond_to do |format|
       if @company.save
-        format.html { redirect_to companies_path, notice: "Company was successfully created." }
-        format.json { render @company, status: :created }
+        flash[:notice] = 'Company was successfully created'
+        redirect_to companies_path
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+        flash[:notice] = 'Company was not created'
+        render :new
     end
   end
 
   def update
-    respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to @company, notice: "Company was successfully updated." }
-        format.json { render @company, status: :ok }
+        flash[:notice] = 'Company was successfully updated'
+        redirect_to companies_path
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+        flash[:notice] = 'Company was not updated'
+        render :edit
     end
   end
 
@@ -52,6 +48,6 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:id, :name, :address, user_id: current_user)
+    params.require(:company).permit(:name, :address, :category_id, user_id: current_user)
   end
 end
