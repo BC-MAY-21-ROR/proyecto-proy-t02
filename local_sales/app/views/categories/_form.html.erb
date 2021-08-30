@@ -1,16 +1,17 @@
-<%= form_with(model: category, local: true) do |form| %>
+<div class="lg:mt-8 mt-6">
+  <%= form_with(model: category, local: true) do |form| %>
 
-  <div>
-    <label for="fname">Categoria:</label><br>
-    <%= form.text_field :name %><br>
+  <div class="mb-4 mt-6">
+    <%= form.label :Categoria, :class => 'block text-blue-600 mb-2'%>
+    <%= form.text_field :name, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %><br>
   </div>
 
-  <div class="actions">
+  <div class="text-center lg:mt-6 mt-10">
     <% if action_name=="edit"  %>
-      <%= form.submit "Actualizar Categoria", :class => 'rounded ... '%>
+      <%= form.submit "Actualizar", :class => 'text-white rounded cursor-pointer w-32 h-10 transition duration-150 ease-in-out bg-blue-900 transform hover:-translate-y-1 hover:scale-110'%>
     <% else %>
-      <%= form.submit "Crear Categoria", :class => 'rounded ...'%>
+      <%= form.submit "Crear Categoria", :class => 'text-white rounded cursor-pointer w-32 h-10 transition duration-150 ease-in-out bg-blue-900 transform hover:-translate-y-1 hover:scale-110'%>
     <% end %>
   </div>
-  
-<% end %>
+  <% end %>
+</div>
