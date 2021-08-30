@@ -1,19 +1,29 @@
-<h1>Companies#index</h1>
-<h1>Negocios<h1>
-
-<table class="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-200 text-gray-800">
-  <tr class="text-left border-b-2 border-gray-300">
-    <th class="px-4 py-3">ID</th>
-    <th class="px-4 py-3">NOMBRE</th>
-    <th class="px-4 py-3">DIRECCION</th>
-  </tr>
-  <% @companies.each do |company| %>
-    <tr class="bg-gray-100 border-b border-gray-200">
-      <td class="px-4 py-3"><%= company.id%></td>
-      <td class="px-4 py-3"><%= company.name %></td>
-      <td class="px-4 py-3"><%= company.address %></td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to 'Nuevo negocio', new_company_path%>
+<div class="container lg:mt-12 mt-6 mx-auto flex justify-center">
+  <div class="lg:mx-42 mx-6">    
+    <div class="flex md:flex-row md:justify-between">
+      <div class="font-bold text-center text-2xl text-blue-800">
+        <h1> Negocios </h1>
+      </div>
+      <div class="text-left">
+        <%= link_to 'Nuevo negocio', new_company_path, :class => 'bg-blue-900 text-white font-bold rounded p-2' %>
+      </div>
+    </div>
+    <table class="table-auto lg:mt-4 mt-2">
+      <thead>
+        <tr class="bg-blue-500 text-white text-left">
+          <th class="w-52 py-2"> Nombre </th>
+          <th class="w-24"> Dirección </th>		            
+        </tr>
+      </thead>
+      <tbody>
+        <% @companies.each do |company| %>
+          <tr>
+            <td class="py-4"><%= company.name %></td>
+            <td class="py-4"><%= company.address %></td>			
+            <td class="py-4 lg:pl-2 pl-0"><%= link_to 'Editar', edit_company_path(company), :class => 'bg-red-600 text-white font-bold rounded lg:p-2 p-1' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>	
+  </div>
+</div>
