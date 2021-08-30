@@ -4,6 +4,7 @@
       <div class="font-bold text-center text-2xl text-blue-800">
         <h1> Ciudades/Localidades </h1>
       </div>
+
       <div class="text-left">
         <%= link_to 'Nuevo Municipio', new_town_path, :class => 'bg-blue-900 text-white font-bold rounded p-1' %>
       </div>
@@ -19,11 +20,11 @@
       </thead>
       <tbody>
         <% @towns.each do |town| %>
-        <tr>
-          <td class="py-4 px-1"><%= town.name %></td>
-          <td class="py-4 px-1"><%= @towns.find(town.id).township.name%></td>
-          <td class="py-4 lg:pl-2 pl-0"><%= link_to image_tag("edit_icon.svg"), edit_town_path(town) %></td>
-        </tr>
+          <tr>
+            <td class="py-4 px-1"><%= town.name %></td>
+            <td class="py-4 px-1"><%= @towns.find(town.id).township.name%></td>
+            <td class="py-4 lg:pl-2 pl-0"><%= link_to image_tag("edit_icon.svg"), edit_town_path(town) %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>    
