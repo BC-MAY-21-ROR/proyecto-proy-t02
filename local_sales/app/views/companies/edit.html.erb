@@ -1,5 +1,9 @@
-<h1>Companies#edit</h1>
-
-<%= render 'form', company: @company%>
-
-
+<div class="container lg:mt-12 mt-6 mx-auto flex justify-center">
+  <div class="lg:mx-42 mx-6">
+    <h1 class="font-bold text-center text-2xl text-blue-800"> Editar Negocio </h1>
+    <%= render 'form', product: @company %>
+    <div class="text-center mt-6">
+      <%= link_to 'Regresar', companies_path, :class => 'bg-red-600 text-white rounded px-8 py-2' %>
+    </div>
+  </div>
+</div>
