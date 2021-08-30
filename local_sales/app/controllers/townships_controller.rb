@@ -1,5 +1,5 @@
 class TownshipsController < ApplicationController
-    before_action :set_township, only: %i[edit update]
+  before_action :set_township, only: %i[edit update]
 
   # GET /states
   def index
@@ -19,10 +19,10 @@ class TownshipsController < ApplicationController
   def create
     @township = Township.new(township_params)
     if @township.save
-      flash[:success] = 'state was successfully created'
+      flash[:success] = 'township was successfully created'
       redirect_to townships_path
     else
-      flash[:error] = 'state was not created'
+      flash[:error] = 'township was not created'
       render :new
     end
   end
