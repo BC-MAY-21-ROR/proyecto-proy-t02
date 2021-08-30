@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :states
   resources :townships
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :towns
   resources :administrators
 end
