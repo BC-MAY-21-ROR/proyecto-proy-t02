@@ -1,14 +1,30 @@
-<table class="rounded-t-lg m-5 w-5/6 mx-auto bg-gray-200 text-gray-800">
-  <tr class="text-left border-b-2 border-gray-300">
-    <th class="px-4 py-3">ID</th>
-    <th class="px-4 py-3">NOMBRE</th>
-  </tr>
-  <% @categories.each do |category| %>
-    <tr class="bg-gray-100 border-b border-gray-200">
-      <td class="px-4 py-3"><%= category.id%></td>
-      <td class="px-4 py-3"><%= category.name %></td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to 'Nueva Categoria', new_category_path%>
+<div class="conntainer lg:mt-12 mt-6 mx-auto flex justify-center">
+  <div class="lg:mx-42 mx-6">
+    <div class="flex md:flex-row md:justify-between">
+      <div class="font-bold text-center text-2xl text-blue-800">
+        <h1> Categorias </h1>
+      </div>
+      <div class="text-left">
+        <%= link_to 'Nueva Categoria', new_category_path, :class => 'bg-blue-900 text-white font-bold rounded p-2'%>
+      </div>
+    </div>
+    <table class="table-auto lg:mt-4 mt-2">
+      <thead>
+        <tr class="bg-blue-500 text-white text-left">
+          <th class="w-52 py-2 px-2"> Id </th>
+          <th class="w-24"> Nombre </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td class="py-4"><%= category.id%></td>
+            <td class="px-4 py-3"><%= category.name %></td>
+            <td class="py-4 lg:pl-2 pl-0"><%= link_to image_tag("edit_icon.svg"), edit_category_path(category) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
