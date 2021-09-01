@@ -1,5 +1,23 @@
+@import "./../utils/variables";
+
 .category {
   position: absolute;
   bottom: 20px;
   right: 22px;
+}
+
+.terciary_font {
+  background-color: $terciary_color_two;
+}
+
+.primary_button {
+  background-color: $primary_color;
+}
+
+.secondary_button {
+  background-color: $secondary_color;
+}
+
+.terciary_button {
+  background-color: $terciary_color_one;
 }
