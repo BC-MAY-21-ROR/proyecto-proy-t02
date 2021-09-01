@@ -1,25 +1,24 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: %i[ show edit update ]
+  before_action :set_product, only: %i[show edit update]
 
   # GET /products
   def index
-    @products = Product.all
+    @pagy, @products = pagy(Product.all)
   end
 
   # GET /products/new
   def new
-	  @product = Product.new
+    @product = Product.new
   end
 
-	# GET /products/1/edit
-  def edit
-  end
+  # GET /products/1/edit
+  def edit; end
 
   # POST /products
   def create
     @product = Product.new(product_params)
-    @product.company_id = 1 # TODO Assign company_id according to previous company selection
+    @product.company_id = 1 # TODO: Assign company_id according to previous company selection
     if @product.save
       flash[:success] = 'product was successfully created'
       redirect_to products_path
@@ -28,7 +27,7 @@ class ProductsController < ApplicationController
     end
   end
 
-	# PATCH/PUT /products/1
+  # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
       flash[:success] = 'product was successfully updated'
@@ -40,13 +39,13 @@ class ProductsController < ApplicationController
 
   private
 
-		# Use callbacks to share common setup or constraints between actions.
-	  def set_product
-	    @product = Product.find(params[:id])
-	  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-	  # Only allow a list of trusted parameters through.
-	  def product_params
-      params.require(:product).permit(:name, :price, :quantity, :description, :company_id)
-    end
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:name, :price, :quantity, :description, :company_id)
+  end
 end
