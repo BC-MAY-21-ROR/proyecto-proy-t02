@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   private
 
   def access_denied
-    redirect_to products_path
+    redirect_to root_path
   end
 end
