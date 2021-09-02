@@ -4,4 +4,6 @@ class Product < ApplicationRecord
   belongs_to :company
   has_many :offers_products
   has_many :offers, through: :offers_products
+  has_one_attached :product_img
+  
 end

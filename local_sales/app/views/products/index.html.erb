@@ -8,6 +8,7 @@
 		  <th class="w-24"> Precio </th>
 		  <th class="w-24"> Cantidad </th>
 		  <th class="w-54"> Descripción </th>
+		  <th class="w-54"> Imagen </th>
 		  <th></th>
 		</tr>
 	  </thead>
@@ -18,6 +19,7 @@
 			<td class="py-4"><%= product.price %></td>
 			<td class="py-4"><%= product.quantity %></td>
 			<td class="py-4"><%= product.description %></td>
+			<td class="py-4"><%= image_tag(product.product_img , width:300) if product.product_img.attached? %></td>
 			<td class="py-4 lg:pl-2 pl-0"><%= link_to 'Editar', edit_product_path(product), :class => 'bg-red-600 text-white font-bold rounded lg:p-2 p-1' %></td>
 		  </tr>
 		<% end %>
