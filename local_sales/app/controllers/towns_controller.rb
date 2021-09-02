@@ -3,7 +3,7 @@ class TownsController < ApplicationController
 
   # GET /states
   def index
-    @town = Town.all
+    @towns = Town.all
     @townships = Township.all    
   end
 

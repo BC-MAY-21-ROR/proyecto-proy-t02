@@ -44,8 +44,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
-  def product_params
-    params.require(:product).permit(:name, :price, :quantity, :description, :company_id)
+
+	# Only allow a list of trusted parameters through.
+	def product_params
+    params.require(:product).permit(:name, :price, :quantity, :description, :product_img, :company_id)
   end
 end

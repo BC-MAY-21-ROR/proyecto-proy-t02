@@ -1,0 +1,20 @@
+CLOUDINARY_URL=cloudinary://664614856691939:6xHljTjJnwbGQWm1osA2-mc8OLk@dcz6okehs
+---
+development:
+  cloud_name: dcz6okehs
+  api_key: '664614856691939'
+  api_secret: 6xHljTjJnwbGQWm1osA2-mc8OLk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dcz6okehs
+  api_key: '664614856691939'
+  api_secret: 6xHljTjJnwbGQWm1osA2-mc8OLk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dcz6okehs
+  api_key: '664614856691939'
+  api_secret: 6xHljTjJnwbGQWm1osA2-mc8OLk
+  enhance_image_tag: true
+  static_file_support: false

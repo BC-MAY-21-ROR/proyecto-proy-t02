@@ -32,6 +32,11 @@
       <%= form.text_field :description, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
     </div>
 
+    <div class="mb-4 mt-6">
+      <div><%= form.label :picture, label="Portada del Proyecto", class: "md:text-base md:py-2" %></div>
+      <div><%= form.file_field :product_img, direct_upload: true%></div>
+    </div>
+
     <div class="text-center lg:mt-6 mt-10">
       <%= form.submit 'Guardar', :class => 'text-white rounded cursor-pointer w-32 h-10 transition duration-150 ease-in-out bg-blue-900 transform hover:-translate-y-1 hover:scale-110' %>
     </div>
