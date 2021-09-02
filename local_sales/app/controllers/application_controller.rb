@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   private
 
   def access_denied
-    return redirect_to products_path if current_user.admin?
+    redirect_to products_path if current_user.admin?
   end
 end
