@@ -13,7 +13,7 @@
     </div>
     <!-- sidebar -->
     <div class="sidebar bg-blue-800 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0
-      left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+                left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
       <!-- logo -->
       <a href="#" class="text-white flex items-center space-x-2 px-4">
         <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -26,7 +26,7 @@
         <li class="block py-2.5 px-4 rounded hover:bg-blue-700"><%= link_to 'Inicio', products_path %></li>
         <li class="block py-2.5 px-4 rounded hover:bg-blue-700"><%= link_to 'Negocios', states_path %></li>
         <li class="block py-2.5 px-4 rounded hover:bg-blue-700"><%= link_to 'Inventario', offers_path %></li>
-        <li class="block py-2.5 px-4 rounded hover:bg-blue-700"><%= link_to 'Cerrar sesión', destroy_user_session_path %></li>  
+        <li class="block py-2.5 px-4 rounded hover:bg-blue-700"><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>  
       </nav>
     </div>
   <% end %>
