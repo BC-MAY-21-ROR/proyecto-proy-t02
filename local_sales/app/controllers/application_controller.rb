@@ -4,9 +4,17 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied, with: :access_denied
 
+  def after_sign_in_path_for(resource)
+    if resource.super_admin?
+      administrators_path
+    elsif resource.admin?
+      products_path
+    end
+  end
+
   private
 
   def access_denied
-    redirect_to root_path
+    return redirect_to products_path if current_user.admin?
   end
 end
