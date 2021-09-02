@@ -1,0 +1,7 @@
+<h1 class="text-4xl font-extrabold text-gray-900 sm:text-3xl">Offers</h1>
+<div class="mt-6 grid sm:grid-cols-3 sm:gap-x-8 xl:grid-cols-4 xl:gap-x-10">
+   <% @featured_products.each do |featured_product| %>
+     <%= render 'product_card', product: featured_product %>
+   <% end %>
+  </div>
+</div>

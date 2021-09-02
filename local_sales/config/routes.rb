@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :states
   resources :townships
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :towns
   resources :administrators
+  root 'customers#index'
 end
