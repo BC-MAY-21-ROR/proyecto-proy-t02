@@ -23,8 +23,18 @@
     </div>
 
     <div class="mb-4 mt-6">
+      <div><%= form.label :cover, label="Teléfono", class: "md:text-base md:py-2" %></div>
+      <%= form.text_field :phone, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
+    </div>
+
+    <div class="mb-4 mt-6">
       <div><%= form.label :cover, label="Categoría", class: "md:text-base md:py-2" %></div>
       <%= form.collection_select :category_id, Category.order(:name), :id, :name%>
+    </div>
+
+    <div class="mb-4 mt-6">
+      <div><%= form.label :cover, label="Ciudad/Localidad", class: "md:text-base md:py-2" %></div>
+      <%= form.collection_select :town_id, Town.order(:name), :id, :name %>
     </div>
 
     <div class="text-center lg:mt-6 mt-10">
