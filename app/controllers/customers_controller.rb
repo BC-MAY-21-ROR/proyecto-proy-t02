@@ -6,4 +6,8 @@ class CustomersController < ApplicationController
     @categories = Category.limit(2)
     @featured_products = Product.all
   end
+
+  def product_results
+    @results = ProductsQuery.search_product(params[:name])
+  end
 end
