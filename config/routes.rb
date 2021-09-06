@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :townships
   resources :towns
   resources :administrators
+  get 'product/results', to: 'customers#product_results', as: 'product_results' 
+
   root 'customers#index'
 end
