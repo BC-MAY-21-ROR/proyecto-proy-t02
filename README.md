@@ -1,6 +1,6 @@
 ![BrightCoders Logo](img/logo-bc.png)
-![rubycritic-badge](local_sales/badges/app/rubycritic_badge_score.svg)
-![rubycritic-badge](local_sales/badges/spec/rubycritic_badge_score.svg)
+![rubycritic-badge](badges/app/rubycritic_badge_score.svg)
+![rubycritic-badge](badges/spec/rubycritic_badge_score.svg)
 [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails)
 
 # Nombre del proyecto
