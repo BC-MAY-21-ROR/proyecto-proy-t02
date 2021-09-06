@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_product, only: %i[show edit update]
 
   # GET /products
@@ -44,9 +43,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-
-	# Only allow a list of trusted parameters through.
-	def product_params
+  # Only allow a list of trusted parameters through.
+  def product_params
     params.require(:product).permit(:name, :price, :quantity, :description, :product_img, :company_id)
   end
 end
