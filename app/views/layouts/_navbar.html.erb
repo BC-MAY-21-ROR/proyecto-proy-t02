@@ -17,7 +17,7 @@
             Local sales <%= image_tag('localsales.svg', size: '20x8', class: 'ml-4') %> 
           <% end %>
           <div class="flex items-center flex-shrink-0 space-x-6">
-            <%= form_with(url: { controller: 'customers', action: 'product_results' }) do |form| %>
+            <%= form_with(url: { controller: 'customers', action: 'product_results' }, method: :get) do |form| %>
               <%= form.text_field :name, :autocomplete => :off, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
               <%= form.submit 'Search', :class => 'cursor-pointer text-gray-300 bg-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'%>
             <% end %>

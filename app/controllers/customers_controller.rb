@@ -8,6 +8,7 @@ class CustomersController < ApplicationController
   end
 
   def product_results
-    @results = ProductsQuery.search_product(params[:name])
+    @product = params[:name]
+    @results = ProductsQuery.search_product(@product)
   end
 end
