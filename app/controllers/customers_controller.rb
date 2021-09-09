@@ -7,6 +7,11 @@ class CustomersController < ApplicationController
     @featured_products = Product.all
   end
 
+  def show 
+    @product_card = Product.find(params[:id])
+    @company = Company.find(@product_card.company_id)
+  end
+
   def product_results
     @product = params[:name]
     @results = ProductsQuery.search_product(@product)
