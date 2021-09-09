@@ -1,18 +1,5 @@
 <div class="lg:mt-8 mt-6">
-  <%= form_with(model: state) do |form| %> <% if state.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(state.errors.count, "error") %> prohibited this state from
-      being saved:
-    </h2>
-    <ul>
-      <% state.errors.each do |error| %>
-      <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-
+  <%= form_with(model: state) do |form| %> 
   <div class="mb-4 mt-6">
     <%= form.label :Nombre, :class => 'block text-blue-600 mb-2' %> <%=
     form.text_field :name, :class => 'lg:w-96 w-auto bg-gray-200 rounded
