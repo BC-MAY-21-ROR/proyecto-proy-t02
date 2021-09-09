@@ -5,4 +5,6 @@ class Company < ApplicationRecord
   belongs_to :town
   has_many :providers
   has_many :products
+  has_one_attached :company_img
+  
 end

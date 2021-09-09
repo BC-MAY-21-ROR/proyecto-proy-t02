@@ -19,7 +19,8 @@
         <% @companies.each do |company| %>
           <tr>
             <td class="py-4"><%= company.name %></td>
-            <td class="py-4"><%= company.address %></td>			
+            <td class="py-4"><%= company.address %></td>
+            <td class="py-4"><%= image_tag(company.company_img , width:300) if company.company_img.attached? %></td>
             <td class="py-4 lg:pl-2 pl-0"><%= link_to 'Editar', edit_company_path(company), :class => 'bg-red-600 text-white font-bold rounded lg:p-2 p-1' %></td>
           </tr>
         <% end %>

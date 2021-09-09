@@ -37,6 +37,11 @@
       <%= form.collection_select :town_id, Town.order(:name), :id, :name %>
     </div>
 
+    <div class="mb-4 mt-6">
+      <div><%= form.label :cover, label="Logotipo del Negocio", class: "md:text-base md:py-2" %></div>
+      <div><%= form.file_field :company_img, direct_upload: true%></div>
+    </div>
+
     <div class="text-center lg:mt-6 mt-10">
       <%= form.submit 'Guardar', :class => 'text-white rounded cursor-pointer w-32 h-10 transition duration-150 ease-in-out bg-blue-900 transform hover:-translate-y-1 hover:scale-110' %>
     </div>
