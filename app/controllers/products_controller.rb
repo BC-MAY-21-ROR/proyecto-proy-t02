@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
       redirect_to products_path
     else
       flash[:error] = 'product was not created'
+      render :new
     end
   end
 
@@ -33,6 +34,7 @@ class ProductsController < ApplicationController
       redirect_to products_path
     else
       flash[:error] = 'product was not updated'
+      render :edit
     end
   end
 
