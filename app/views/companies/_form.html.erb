@@ -1,17 +1,5 @@
 <div class="lg:mt-8 mt-6">
   <%= form_with(model: @company) do |form| %>
-    <% if @company.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-        <ul>
-          <% @company.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class="mb-4 mt-6">
       <div><%= form.label :cover, label="Nombre", class: "md:text-base md:py-2" %></div>
       <%= form.text_field :name, :class => 'lg:w-96 w-auto bg-gray-200 rounded border-none' %>
