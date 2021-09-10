@@ -1,0 +1,21 @@
+<div class="container lg:mt-12 mt-6 mx-auto flex justify-center">
+    <div class="lg:mx-42 mx-6">
+        <h1 class="font-bold text-center text-2xl text-blue-800"> Productos </h1>
+        <table class="table-auto lg:mt-4 mt-2">
+            <thead>
+            <tr class="bg-gray-500 text-white text-left">
+                <th class="w-52 py-2"> Nombre </th>
+                <th class="w-24"> Precio </th>
+                <th class="w-24"> Cantidad </th>
+                <th class="w-54"> Negocio </th>
+                <th></th>
+            </tr>
+            </thead>
+            <%= render @companies.products %>
+        </table>
+    </div>
+</div>
+
+<div class="container text-center mt-6">
+  <%= pagy_nav(@pagy).html_safe %>
+</div>

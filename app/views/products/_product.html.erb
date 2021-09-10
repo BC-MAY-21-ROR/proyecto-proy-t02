@@ -1,0 +1,8 @@
+<tbody>
+    <tr>
+        <td class="py-4"><%= product.name %></td>
+        <td class="py-4"><%= product.price %></td>
+        <td class="py-4"><%= product.quantity %></td>
+        <td class="py-4"><%= Product.find(product.id).company.name %></td>
+    </tr>
+</tbody>

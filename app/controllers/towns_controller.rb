@@ -1,5 +1,6 @@
 class TownsController < ApplicationController
   before_action :set_town, only: %i[edit update]
+  layout 'super_admin'
 
   # GET /states
   def index

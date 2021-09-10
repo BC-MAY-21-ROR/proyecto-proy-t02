@@ -1,10 +1,11 @@
 class AdministratorsController < ApplicationController
   skip_load_and_authorize_resource
   before_action :set_administrator, only: %i[show edit update destroy]
+  layout 'super_admin'
 
   def index
     authorize! :index, User
-    @administrators = UsersQuery.administrators
+    @pagy, @administrators = pagy(UsersQuery.administrators)
   end
 
   def new
@@ -45,13 +46,28 @@ class AdministratorsController < ApplicationController
     redirect_to administrators_path
   end
 
+  def bussiness
+    @pagy, @companies = pagy(Company.all)
+  end
+
+  def inventory
+    @pagy, @companies = pagy(Company.all)
+  end
+
+  def product_company
+    @pagy, @products = pagy(Product.where(company_id: params[:company_id]))
+    @companies = Company.find(params[:company_id])
+  end
+  
+
   private
+
+  def set_administrator
+    @administrator = User.find(params[:id])
+  end
 
   def administrator_params
     params.require(:user).permit(:name, :email, :password)
   end
 
-  def set_administrator
-    @administrator = User.find(params[:id])
-  end
 end
