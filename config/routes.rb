@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :towns
   resources :administrators
   get 'product/results', to: 'customers#product_results', as: 'product_results' 
-
+  get 'product/seemore', to: 'customers#show', as: 'show'
+  
   root 'customers#index'
 end
