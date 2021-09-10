@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   resources :states
   resources :townships
   resources :towns
-  resources :administrators
+  resources :administrators do    
+    get 'company/:company_id', to: 'administrators#product_company', on: :collection, as: :product_companies    
+  end
+  get 'bussiness', to: 'administrators#bussiness'
+  get 'inventory', to: 'administrators#inventory'
+
   get 'product/results', to: 'customers#product_results', as: 'product_results' 
 
   root 'customers#index'
