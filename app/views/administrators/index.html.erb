@@ -1,25 +1,40 @@
-<div class="container max-w-md mx-auto">
-  <%= link_to 'New', new_administrator_path %>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Options</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @administrators.each do |administrator| %>
-        <tr>
-          <td><%= administrator.name %></td>
-          <td><%= administrator.email %></td>
-          <td>
-            <%= link_to 'Show', administrator_path(administrator) %>
-            <%= link_to 'Edit', edit_administrator_path(administrator) %>
-            <%= link_to 'Destroy', administrator_path(administrator), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="py-3">
+  <h1 class="text-center font-bold text-xl text-blue-800">Hello, welcome back Super Admin</h1>
+</div>
+
+<div class="text-left py-3 md:mx-44 m-5">
+  <%= link_to 'Nuevo Administrador', new_administrator_path, :class => 'bg-blue-900
+  text-white font-bold rounded p-2' %>
+</div>
+
+<div class="md:px-4 md:mx-40 grid md:grid-cols-4 md:gap-x-2 gap-y-4 m-5 md:m-0 md:py-4">
+  <% @administrators.each do |administrator| %>
+    <div class=" md:py-5 rounded-lg md:overflow-hidden shadow-lg md:text-base font-normal md:text-left md:tracking-normal 
+      md:align-middle md:space-y-1">
+
+      <div class="md:py-1 md:text-xl font-bold md:px-2 py-2 ml-3 md:ml-4">
+        <%= administrator.name %>
+      </div>
+
+      <div class="md:py-1 md:text-lg font-light md:px-2 py-2 ml-3 md:ml-4">
+        <%= administrator.email %>
+      </div>
+
+      <div class="md:px-1 flex py-2 md:py-0">        
+        <div class="md:p-2 ml-3 md:ml-0">
+          <%= button_to 'Ver Usuario', administrator_path(administrator), :class => 'bg-blue-900
+          text-white font-bold rounded p-1', :method => :get %>
+        </div> 
+
+        <div class="md:p-2 ml-3 md:ml-0">
+          <%= button_to 'Editar Usuario', edit_administrator_path(administrator), :class => 'bg-blue-900
+          text-white font-bold rounded p-1', :method => :get %>
+        </div>     
+      </div>
+    </div>  
+  <% end %>
+</div>
+
+<div class="container text-center mt-6">
+  <%= pagy_nav(@pagy).html_safe %>
 </div>

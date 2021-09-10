@@ -1,0 +1,26 @@
+<div class="py-5">
+  <h1 class="text-center font-bold text-3xl text-blue-800">Inventory Bussiness</h1>
+</div>
+
+<div class="md:px-4 md:mx-40 grid md:grid-cols-4 md:gap-x-2 gap-y-4 m-5 md:m-0 md:py-4 justify-center text-center">
+  <% @companies.each do |company| %>
+    <div class=" md:py-5 rounded-lg md:overflow-hidden shadow-lg md:text-base font-normal md:text-left md:tracking-normal 
+      md:align-middle md:space-y-1">
+
+      <div class="md:py-1 md:text-xl font-bold md:px-2 py-2 ml-3 md:ml-2">
+        <%= company.name %>
+      </div>
+
+      <div class="md:px-1 py-2 md:py-0">        
+        <div class="md:p-2 ml-3 md:ml-0">
+          <%= button_to 'Ver Inventario', product_companies_administrators_path(company), :class => 'bg-blue-900
+          text-white font-bold rounded p-1', :method => :get %>
+        </div>   
+      </div>
+    </div>  
+  <% end %>
+</div>
+
+<div class="container text-center mt-6">
+  <%= pagy_nav(@pagy).html_safe %>
+</div>
