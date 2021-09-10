@@ -1,5 +1,6 @@
 class StatesController < ApplicationController
   before_action :set_state, only: %i[edit update]
+  layout 'super_admin'
 
   # GET /states
   def index

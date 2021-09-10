@@ -1,5 +1,6 @@
 class TownshipsController < ApplicationController
   before_action :set_township, only: %i[edit update]
+  layout 'super_admin'
 
   # GET /states
   def index
