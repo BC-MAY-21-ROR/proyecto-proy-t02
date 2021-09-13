@@ -2,15 +2,14 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = Category.all
+    @pagy, @categories = pagy(Category.all)
   end
 
   def new
     @category = Category.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @category = Category.new(category_params)
@@ -21,7 +20,7 @@ class CategoriesController < ApplicationController
       flash[:notice] = 'Category was not created'
       render :new
     end
-  end  
+  end
 
   def update
     if @category.update(category_params)
@@ -40,6 +39,7 @@ class CategoriesController < ApplicationController
   end
 
   private
+  
   def set_category
     @category = Category.find(params[:id])
   end

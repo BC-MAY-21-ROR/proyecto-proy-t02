@@ -3,7 +3,7 @@ class OffersController < ApplicationController
 
   # GET /offers
   def index
-    @offers = Offer.all
+    @pagy, @offers = pagy(Offer.all)
   end
 
   # GET /offers/new
