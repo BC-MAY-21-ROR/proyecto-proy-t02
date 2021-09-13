@@ -1,0 +1,21 @@
+<%#
+  This template is i18n-ready: if you don't use i18n, then you can replace the pagy_t
+  calls with the actual strings ("&lsaquo; Prev", "Next &rsaquo;", "&hellip;").
+  The link variable is set to a proc that returns the link tag.
+  Usage: link.call( page_number [, text [, extra_attributes_string ]])
+-%>
+<% link = pagy_link_proc(pagy) -%>
+<%#                            -%><ul aria-label="pager" class="inline-flex space-x-2" role="navigation">
+<% if pagy.prev                -%>  <button class="flex items-center justify-center w-12 h-10 text-indigo-600 transition-colors duration-150 rounded focus:shadow-outline hover:bg-indigo-100"><%== link.call(pagy.prev, pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></button>
+<% else                        -%>  <button class="flex items-center justify-center w-12 h-10 text-indigo-600 transition-colors duration-150 rounded focus:shadow-outline"><%== pagy_t('pagy.nav.prev') %></button>
+<% end                         -%>
+<% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
+<%   if    item.is_a?(Integer) -%>  <button class="w-10 h-10 text-indigo-600 transition-colors duration-150 rounded-full focus:shadow-outline hover:bg-indigo-100"><%== link.call(item) %></button>
+<%   elsif item.is_a?(String)  -%>  <button class="w-10 h-10 text-white transition-colors duration-150 bg-indigo-600 border border-r-0 border-indigo-600 rounded-full focus:shadow-outline"><%= item %></button>
+<%   elsif item == :gap        -%>  <button class="page gap"><%== pagy_t('pagy.nav.gap') %></button>
+<%   end                       -%>
+<% end                         -%>
+<% if pagy.next                -%>  <button class="flex items-center justify-center w-12 h-10 text-indigo-600 transition-colors duration-150 bg-white rounded focus:shadow-outline hover:bg-indigo-100"><%== link.call(pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"') %></button>
+<% else                        -%>  <button class="flex items-center justify-center w-12 h-10 text-indigo-600 transition-colors duration-150 bg-white rounded focus:shadow-outline"><%== pagy_t('pagy.nav.next') %></button>
+<% end                         -%>
+<%#                            -%></ul>
