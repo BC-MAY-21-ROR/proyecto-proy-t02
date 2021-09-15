@@ -17,15 +17,14 @@
           <tr>
             <td class="py-4"><%= company.name %></td>           
             <td class="py-4"></td>
-            <td class="py-4 px-1"><%= @companies.find(company.id).category.name %></td>
-            <td class="py-4 px-1"><%= Product.where(company_id: company.id).sum(:quantity)%> </td>
+            <td class="py-4 px-1"><%= company.category.name %></td>
+            <td class="py-4 px-1"><%= Product.where(company_id: company.id).sum(:quantity) %> </td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-
-<div class="container text-center mt-6">
-  <%= pagy_nav(@pagy).html_safe %>
-</div>
+<nav class="container text-center my-6">
+  <%= render partial: 'shared/pagination', locals: { pagy: @pagy } %>
+</nav>
