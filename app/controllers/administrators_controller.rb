@@ -47,7 +47,7 @@ class AdministratorsController < ApplicationController
   end
 
   def bussiness
-    @pagy, @companies = pagy(Company.all)
+    @pagy, @companies = pagy(Company.includes(:category))
   end
 
   def inventory
@@ -58,7 +58,6 @@ class AdministratorsController < ApplicationController
     @pagy, @products = pagy(Product.where(company_id: params[:company_id]))
     @companies = Company.find(params[:company_id])
   end
-  
 
   private
 
