@@ -22,7 +22,7 @@
         <% @townships.each do |township| %>
           <tr>
             <td class="py-4 px-1"><%= township.name %></td>
-            <td class="py-4 px-1"><%= @townships.find(township.id).state.name%></td>
+            <td class="py-4 px-1"><%= township.state.name%></td>
             <td class="py-4 lg:pl-2 pl-0"><%= link_to image_tag("edit_icon.svg"), edit_township_path(township) %></td>
           </tr>
         <% end %>

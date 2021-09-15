@@ -4,4 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   enum role: %i[admin super_admin]
+
+  has_many :companies
+
 end

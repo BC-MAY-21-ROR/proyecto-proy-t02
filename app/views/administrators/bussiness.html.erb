@@ -7,7 +7,7 @@
       <thead>
         <tr class="bg-gray-500 text-white text-left">
           <th class="w-52 py-2"> Nombre </th>
-          <th class="w-28"> Rol </th>
+          <th class="w-52 py-2"> Usuario </th>
           <th class="w-28"> Categoría </th>
           <th class="w-28"> Productos Totales </th>
         </tr>
@@ -15,10 +15,10 @@
       <tbody>
         <% @companies.each do |company| %>
           <tr>
-            <td class="py-4"><%= company.name %></td>           
-            <td class="py-4"></td>
-            <td class="py-4 px-1"><%= @companies.find(company.id).category.name %></td>
-            <td class="py-4 px-1"><%= Product.where(company_id: company.id).sum(:quantity)%> </td>
+            <td class="py-4"><%= company.name %></td> 
+            <td class="py-4"><%= company.user.email %></td>
+            <td class="py-4 px-1"><%= company.category.name %></td>
+            <td class="py-4 px-1"><%= company.sum_products%></td>
           </tr>
         <% end %>
       </tbody>
