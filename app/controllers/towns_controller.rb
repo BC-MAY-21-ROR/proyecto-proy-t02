@@ -4,8 +4,7 @@ class TownsController < ApplicationController
 
   # GET /states
   def index
-    @towns = Town.all
-    @townships = Township.all    
+    @pagy, @towns = pagy(Town.includes(:township))
   end
 
   # GET /states/new

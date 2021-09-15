@@ -2,21 +2,20 @@ class TownshipsController < ApplicationController
   before_action :set_township, only: %i[edit update]
   layout 'super_admin'
 
-  # GET /states
+  # GET /township
   def index
-    @townships = Township.all
-    @states = State.all
+    @pagy, @townships = pagy(Township.includes(:state))
   end
 
-  # GET /states/new
+  # GET /townships/new
   def new
     @township = Township.new
   end
 
-  # GET /states/1/edit
+  # GET /townships/1/edit
   def edit; end
 
-  # POST /states
+  # POST /townships
   def create
     @township = Township.new(township_params)
     if @township.save
@@ -28,7 +27,7 @@ class TownshipsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /states/1
+  # PATCH/PUT /townships/1
   def update
     if @township.update(township_params)
       flash[:success] = 'state was successfully updated'

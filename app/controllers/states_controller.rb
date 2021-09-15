@@ -4,7 +4,7 @@ class StatesController < ApplicationController
 
   # GET /states
   def index
-    @states = State.all
+    @pagy, @states = pagy(State.all)
   end
 
   # GET /states/new
