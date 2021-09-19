@@ -11,7 +11,7 @@ Category.create!(name: 'Tools')
 5.times { Town.create!(name: Faker::Address.city, township_id: '1') }
 5.times do
   Company.create!(name: Faker::Company.name, address: Faker::Address.full_address, phone: Faker::PhoneNumber.cell_phone,
-                  category_id: '1', town_id: '1')
+                  category_id: '1', town_id: '1', user_id: '2')
 end
 
 10.times do

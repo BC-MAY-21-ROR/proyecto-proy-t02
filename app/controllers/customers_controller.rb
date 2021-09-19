@@ -8,8 +8,8 @@ class CustomersController < ApplicationController
   end
 
   def show 
-    @product_card = Product.find(params[:id])
-    @company = Company.find(@product_card.company_id)
+    @product = Product.includes(:company).find(params[:id])
+    @product_presenter = ProductPresenter.new(@product)
   end
 
   def product_results

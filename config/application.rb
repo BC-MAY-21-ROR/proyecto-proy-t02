@@ -12,6 +12,7 @@ module LocalSales
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     config.autoload_paths += Dir[Rails.root.join('app', 'queries')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'presenters')]
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

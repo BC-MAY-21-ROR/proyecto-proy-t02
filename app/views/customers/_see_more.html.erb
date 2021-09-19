@@ -1,27 +1,31 @@
-<section class="min-h-full bg-blue-100 lg:p-32 p-14 text-right" style="background-image: url('https://images.unsplash.com/photo-1606836483111-e08386681a8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); background-size: cover">
-</section>
+<div>
+  <section class="min-h-full bg-blue-100 lg:p-32 p-14 text-right" style="background-image: url('https://images.unsplash.com/photo-1606836483111-e08386681a8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'); background-size: cover">
+  </section>
+</div>
 
-<div class="flex items-center justify-center h-full w-full p-4" >
+<div class="relative bottom-24 flex items-center justify-center h-full w-full p-4" >
   <div class="group relative terciary_font h-1/3 w-1/2 flex space-x-2">
     <div class="p-4 w-11/12 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none"> 
       <%= image_tag('bag.png', class: 'w-full h-full object-cover')%>           
     </div>
     
     <div class="mt-4 justify-start">
-      <h3 class="text-xl text-black-700 font-bold"><%= @product_card.name %></h3>      
+      <h3 class="text-xl text-black-700 font-bold"><%= @product.name %></h3>      
       <div class="flex space-x-2 justify-between">
-        <p class="mt-1 text-sm text-green-600 font-bold">Disponible</p>      
+          <p class="mt-1 text-sm <%= @product_presenter.availity_color %> font-bold"><%= @product_presenter.availity %></p> 
         <div>
-          <p class="mt-1 text-sm text-blue-900 font-bold">Vendido por: <%= @company.name %> </p>
+          <p class="mt-1 text-sm text-blue-900 font-bold">Vendido por: <%= @product.company.name %> </p>
         </div>
         <br>
       </div> 
       <div>
         <br>
-        <p class="mt-1 text-sm text-blue-900 font-bold"><%= @product_card.description %></p>
+        <p class="mt-1 text-sm text-blue-900 font-bold"><%= @product.description %></p>
       </div>
       <br>
-      <p class="mt-1 text-sm text-black-700 font-extrabold">Precio: <%= @product_card.price %></p>
+      <p class="mt-1 text-sm text-black-700 font-extrabold">Precio: <%= @product.price %></p>
+      <br>
+      <p class="mt-1 text-sm text-black-700 font-extrabold">restantes: <%= @product.quantity %></p>
     </div>
   </div>
 </div>
