@@ -4,7 +4,7 @@
 [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails)
 
 # Nombre del proyecto
-Local Sales
+Local Sales.
 
 ## Problematica que atiende
 A raíz de la pandemia por Covid-19 muchos de los negocios locales y emprendedores se vieron afectados en las ventas, generando una baja en sus ingresos. 
